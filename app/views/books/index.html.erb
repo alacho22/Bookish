@@ -1,6 +1,10 @@
 <h1>My Books</h1>
 <ul>
-  <% for book in @books %>
-    <li><%= book.title %></li>
+  <% @books.each do |book| %>
+    <li>
+      <a href="<%= book_path(book) %>">
+        <%= book.title %>
+      </a>
+    </li>
   <% end %>
 </ul>

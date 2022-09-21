@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="development" uuid="e0d097ce-40b6-495a-928d-a71e093f4894">
+    <data-source source="LOCAL" name="development" uuid="cc6d0770-2950-4eeb-92ee-31ddcdb30c5b">
       <driver-ref>sqlite.xerial</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:\\wsl$\Ubuntu-20.04\home\alacho\Work\Training\bookish\db\development.sqlite3</jdbc-url>
+      <jdbc-url>jdbc:sqlite:$USER_HOME$/Work/Training/Bookish-DB/development.sqlite3</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
       <libraries>
         <library>

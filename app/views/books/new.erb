@@ -1,0 +1,22 @@
+<h1>New Article</h1>
+
+<%= form_with model: @book do |form| %>
+  <div>
+    <%= form.label :title %><br>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :author %><br>
+    <%= form.text_area :author %>
+  </div>
+
+  <div>
+    <%= form.label :ISBN %><br>
+    <%= form.text_area :ISBN %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
