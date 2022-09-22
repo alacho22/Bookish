@@ -1,6 +1,9 @@
-<div class="container is-fluid">
-  <h1 class="title"><%= @copy.book.title %></h1>
-
+<section class="hero is-primary">
+  <div class="hero-body">
+    <h1 class="title is-1"><%= @copy.book.title %> Copy <%= @copy.id %></h1>
+  </div>
+</section>
+<section class="container is-fluid">
   <div class="block">
     <p>Author: <%= @copy.book.author %></p>
     <p>ISBN: <%= @copy.book.ISBN %></p>
@@ -19,4 +22,4 @@
     </ul>
   </div>
 
-</div>
+</section>
