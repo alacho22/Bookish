@@ -2,3 +2,7 @@
 
 <p>Author: <%= @book.author %></p>
 <p>ISBN: <%= @book.ISBN %></p>
+
+<ul>
+  <li><%= link_to "Edit", edit_book_path(@book) %></li>
+</ul>
