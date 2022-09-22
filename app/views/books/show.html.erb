@@ -3,6 +3,8 @@
 <p>Author: <%= @book.author %></p>
 <p>ISBN: <%= @book.ISBN %></p>
 
+
+
 <ul>
   <li><%= link_to "Edit", edit_book_path(@book) %></li>
   <li><%= link_to "Destroy", book_path(@book), data: {
@@ -10,3 +12,36 @@
     turbo_confirm: "Are you sure?"
   } %></li>
 </ul>
+
+<h2>Copies</h2>
+
+<table>
+  <thead>
+  <tr>
+    <th>
+      Copy Number
+    </th>
+    <th>
+      Borrower
+    </th>
+    <th>
+      Due Date
+    </th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @book.copies.each do |copy| %>
+    <tr>
+      <td>
+        <%= link_to copy.id, copy_path(copy) %>
+      </td>
+      <td>
+        <%= copy.borrower %>
+      </td>
+      <td>
+        <%= copy.due_date %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
