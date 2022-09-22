@@ -1,29 +1,36 @@
 <%= form_with model: copy do |form| %>
-  <div>
-    <%= form.label :book_id %><br>
-    <%= form.select :book_id, Book.all.map { |book| [book.title, book.id] } %>
-    <% copy.errors.full_messages_for(:book_id).each do |message| %>
+  <div class="field">
+    <%= form.label :book_id, :class => "label" %><br>
+      <div class="control">
+        <%= form.select :book_id, Book.all.map { |book| [book.title, book.id] }, :class => "input" %>
+      </div>
+      <% copy.errors.full_messages_for(:book_id).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
-  <div>
-    <%= form.label :borrower %><br>
-    <%= form.text_field :borrower %>
+  <div class="field">
+    <%= form.label :borrower, :class => "label" %><br>
+    <div class="control">
+      <%= form.text_field :borrower, :class => "input" %>
+    </div>
     <% copy.errors.full_messages_for(:borrower).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
-  <div>
-    <%= form.label :due_date %><br>
-    <%= form.date_field :due_date %>
+  <div class="field">
+    <%= form.label :due_date, :class => "label" %><br>
+    <div class="control">
+      <%= form.date_field :due_date, :class => "input" %>
+    </div>
+
     <% copy.errors.full_messages_for(:due_date).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
   <div>
-    <%= form.submit %>
+    <%= form.submit :class => "button is-primary" %>
   </div>
 <% end %>

@@ -1,29 +1,29 @@
 <%= form_with model: book do |form| %>
   <div>
-    <%= form.label :title %><br>
-    <%= form.text_field :title %>
+    <%= form.label :title, :class => "label" %><br>
+    <%= form.text_field :title, :class => "input" %>
     <% book.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
   <div>
-    <%= form.label :author %><br>
-    <%= form.text_area :author %>
+    <%= form.label :author, :class => "label" %><br>
+    <%= form.text_area :author, :class => "input" %>
     <% book.errors.full_messages_for(:author).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
   <div>
-    <%= form.label :ISBN %><br>
-    <%= form.text_area :ISBN %>
+    <%= form.label :ISBN, :class => "label" %><br>
+    <%= form.text_area :ISBN, :class => "input" %>
     <% book.errors.full_messages_for(:ISBN).each do |message| %>
       <div><%= message %></div>
     <% end %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="block">
+    <%= form.submit :class => "button" %>
   </div>
 <% end %>

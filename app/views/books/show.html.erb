@@ -1,47 +1,61 @@
-<h1><%= @book.title %></h1>
+<div class="container is-fluid">
+  <div class="block">
+    <div class="block">
+      <h1 class="title"><%= @book.title %></h1>
+    </div>
+    <div class="block">
+      <p>Author: <%= @book.author %></p>
+      <p>ISBN: <%= @book.ISBN %></p>
+    </div>
 
-<p>Author: <%= @book.author %></p>
-<p>ISBN: <%= @book.ISBN %></p>
+    <div class="block">
+      <ul>
+        <li><%= link_to "Edit", edit_book_path(@book) %></li>
+        <li><%= link_to "Destroy", book_path(@book), data: {
+          turbo_method: :delete,
+          turbo_confirm: "Are you sure?"
+        } %></li>
+      </ul>
+    </div>
 
 
 
-<ul>
-  <li><%= link_to "Edit", edit_book_path(@book) %></li>
-  <li><%= link_to "Destroy", book_path(@book), data: {
-    turbo_method: :delete,
-    turbo_confirm: "Are you sure?"
-  } %></li>
-</ul>
 
-<h2>Copies</h2>
+  </div>
 
-<table>
-  <thead>
-  <tr>
-    <th>
-      Copy Number
-    </th>
-    <th>
-      Borrower
-    </th>
-    <th>
-      Due Date
-    </th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @book.copies.each do |copy| %>
-    <tr>
-      <td>
-        <%= link_to copy.id, copy_path(copy) %>
-      </td>
-      <td>
-        <%= copy.borrower %>
-      </td>
-      <td>
-        <%= copy.due_date %>
-      </td>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+  <div class="block">
+    <h2 class="subtitle">Copies</h2>
+
+    <table class="table">
+      <thead>
+      <tr>
+        <th>
+          Copy Number
+        </th>
+        <th>
+          Borrower
+        </th>
+        <th>
+          Due Date
+        </th>
+      </tr>
+      </thead>
+      <tbody>
+      <% @book.copies.each do |copy| %>
+        <tr>
+          <td>
+            <%= link_to copy.id, copy_path(copy) %>
+          </td>
+          <td>
+            <%= copy.borrower %>
+          </td>
+          <td>
+            <%= copy.due_date %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+
+</div>
