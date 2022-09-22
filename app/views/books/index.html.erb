@@ -5,7 +5,7 @@
 
 </section>
 <section class="container is-fluid">
-  <div class>
+  <div>
     <% @books.sort_by { |book| book.title }.each do |book| %>
       <div class="card">
         <a class="card-link" href="<%= book_path(book) %>"></a>

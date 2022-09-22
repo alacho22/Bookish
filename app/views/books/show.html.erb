@@ -1,7 +1,12 @@
+<section class="hero is-primary">
+  <div class="hero-body">
+    <h1 class="title is-1"><%= @book.title %></h1>
+  </div>
+</section>
 <div class="container is-fluid">
   <div class="block">
     <div class="block">
-      <h1 class="title"><%= @book.title %></h1>
+      <h1 class="title"></h1>
     </div>
     <div class="block">
       <p>Author: <%= @book.author %></p>
@@ -17,8 +22,6 @@
         } %></li>
       </ul>
     </div>
-
-
 
 
   </div>
@@ -50,7 +53,7 @@
             <%= copy.borrower %>
           </td>
           <td>
-            <%= copy.due_date %>
+            <%= Time.at(copy.due_date / 1000).strftime("%d/%m/%y") %>
           </td>
         </tr>
       <% end %>
