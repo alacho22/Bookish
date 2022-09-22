@@ -1,7 +1,7 @@
 <%= form_with model: copy do |form| %>
   <div>
     <%= form.label :book_id %><br>
-    <%= form.text_area :book_id %>
+    <%= form.select :book_id, Book.all.map { |book| [book.title, book.id] } %>
     <% copy.errors.full_messages_for(:book_id).each do |message| %>
       <div><%= message %></div>
     <% end %>
@@ -17,7 +17,7 @@
 
   <div>
     <%= form.label :due_date %><br>
-    <%= form.text_area :due_date %>
+    <%= form.date_field :due_date %>
     <% copy.errors.full_messages_for(:due_date).each do |message| %>
       <div><%= message %></div>
     <% end %>

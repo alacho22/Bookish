@@ -44,6 +44,9 @@ class CopiesController < ApplicationController
   private
 
   def copy_params
-    params.require(:copy).permit(:borrower, :due_date, :book_id)
+    permitted_params = params.require(:copy).permit(:borrower, :due_date, :book_id)
+    borrower = permitted_params[:borrower]
+    permitted_params[:borrower] = nil if borrower == ""
+    permitted_params
   end
 end
