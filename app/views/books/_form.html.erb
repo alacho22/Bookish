@@ -5,23 +5,23 @@
     <% book.errors.full_messages_for(:title).each do |message| %>
       <div><%= message %></div>
     <% end %>
-  </div>
+  </div><br>
 
   <div>
     <%= form.label :author, :class => "label" %><br>
-    <%= form.text_area :author, :class => "input" %>
+    <%= form.text_field :author, :class => "input" %>
     <% book.errors.full_messages_for(:author).each do |message| %>
       <div><%= message %></div>
     <% end %>
-  </div>
+  </div><br>
 
   <div>
     <%= form.label :ISBN, :class => "label" %><br>
-    <%= form.text_area :ISBN, :class => "input" %>
+    <%= form.text_field :ISBN, :class => "input" %>
     <% book.errors.full_messages_for(:ISBN).each do |message| %>
       <div><%= message %></div>
     <% end %>
-  </div>
+  </div><br>
 
   <div>
     <%= form.label :cover_image, :class => "label" %><br>
@@ -29,7 +29,7 @@
     <% book.errors.full_messages_for(:cover_image).each do |message| %>
       <div><%= message %></div>
     <% end %>
-  </div>
+  </div><br>
 
   <div class="block">
     <%= form.submit :class => "button" %>

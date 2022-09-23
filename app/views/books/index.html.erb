@@ -1,9 +1,4 @@
-<section class="hero is-primary">
-  <div class="hero-body">
-    <h1 class="title is-1">Library Books</h1>
-  </div>
-
-</section>
+<%= render "shared/bookish_header" %>
 <section class="container is-fluid">
   <div class="book-card-container">
     <% @books.sort_by { |book| book.title }.each do |book| %>

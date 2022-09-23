@@ -1,8 +1,4 @@
-<section class="hero is-primary">
-  <div class="hero-body">
-    <h1 class="title is-1"><%= @copy.book.title %> Copy <%= @copy.id %></h1>
-  </div>
-</section>
+<%= render "shared/bookish_header", subtitle: @copy.book.title + " Copy " + @copy.id.to_s %>
 <section class="container is-fluid">
   <div class="block">
     <p>Author: <%= @copy.book.author %></p>

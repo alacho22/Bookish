@@ -1,13 +1,13 @@
 <%= form_with model: copy do |form| %>
   <div class="field">
     <%= form.label :book_id, :class => "label" %><br>
-      <div class="control">
-        <%= form.select :book_id, Book.all.map { |book| [book.title, book.id] }, :class => "input" %>
-      </div>
-      <% copy.errors.full_messages_for(:book_id).each do |message| %>
+    <div class="select">
+      <%= form.select :book_id, Book.all.map { |book| [book.title, book.id] }, :class => "input" %>
+    </div>
+    <% copy.errors.full_messages_for(:book_id).each do |message| %>
       <div><%= message %></div>
     <% end %>
-  </div>
+  </div><br>
 
   <div class="field">
     <%= form.label :borrower, :class => "label" %><br>
@@ -17,7 +17,7 @@
     <% copy.errors.full_messages_for(:borrower).each do |message| %>
       <div><%= message %></div>
     <% end %>
-  </div>
+  </div><br>
 
   <div class="field">
     <%= form.label :due_date, :class => "label" %><br>
@@ -28,7 +28,7 @@
     <% copy.errors.full_messages_for(:due_date).each do |message| %>
       <div><%= message %></div>
     <% end %>
-  </div>
+  </div><br>
 
   <div>
     <%= form.submit :class => "button is-primary" %>

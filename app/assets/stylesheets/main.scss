@@ -1,42 +1,15 @@
+// overwrites bulma variables
 @import '_layout';
 @import 'bulma';
+// page / partials' styling
+@import "books";
+@import "_bookish_header";
 
-.card-link {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-};
+.container {
+  margin-top: 30px;
+}
 
-$book-card-row-gap: 50px;
-
-.book-card-container {
-  margin-top: $book-card-row-gap;
+.vertical-center {
   display: flex;
-  flex-wrap: wrap;
-  column-gap: 30px;
-  row-gap: $book-card-row-gap;
-}
-
-$card-height: 400px;
-$card-width: 300px;
-
-.book-card {
-  width: $card-width;
-  height: $card-height;
-};
-
-$image-height: $card-height * 0.7;
-
-.book-card .card-image {
-  max-height: $image-height;
-}
-
-.book-card img {
-  max-height: $image-height;
-  object-fit: cover;
-}
-
-.book-card .card-content {
-  background: rgba(255, 255, 255, 0.36)
+  align-items: center;
 }
