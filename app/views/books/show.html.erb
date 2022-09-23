@@ -23,39 +23,61 @@
   </div>
 
   <div class="block">
-    <h2 class="subtitle">Copies</h2>
+    <div id="copies-info-container">
+      <nav class="level">
+        <div class="level-left">
+          <div class="level-item">
+            <h2 class="subtitle is-3">Copies</h2>
+          </div>
+        </div>
+        <div class="level-right">
+          <div class="level-item">
+            <a class="button is-small is-link" href="<%= new_copy_path %>?book_id=<%= @book.id %>" id="add-copy">
+              <span class="material-symbols-outlined">
+              add
+              </span>
+              <span>
+                Add Copy
+              </span>
+            </a>
+          </div>
+        </div>
+      </nav>
 
-    <table class="table">
-      <thead>
-      <tr>
-        <th>
-          Copy Number
-        </th>
-        <th>
-          Borrower
-        </th>
-        <th>
-          Due Date
-        </th>
-      </tr>
-      </thead>
-      <tbody>
-      <% @book.copies.each do |copy| %>
+
+      <table class="table">
+        <thead>
         <tr>
-          <td>
-            <%= link_to copy.id, copy_path(copy) %>
-          </td>
-          <td>
-            <%= copy.borrower %>
-          </td>
-          <td>
-            <%#= Time.at(copy.due_date / 1000).strftime("%d/%m/%y") %>
-            <%= copy.due_date %>
-          </td>
+          <th>
+            Copy Number
+          </th>
+          <th>
+            Borrower
+          </th>
+          <th>
+            Due Date
+          </th>
         </tr>
-      <% end %>
-      </tbody>
-    </table>
+        </thead>
+        <tbody>
+        <% @book.copies.each do |copy| %>
+          <tr>
+            <td>
+              <%= link_to copy.id, copy_path(copy) %>
+            </td>
+            <td>
+              <%= copy.borrower %>
+            </td>
+            <td>
+              <%#= Time.at(copy.due_date / 1000).strftime("%d/%m/%y") %>
+              <%= copy.due_date %>
+            </td>
+          </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+
   </div>
 
 </section>

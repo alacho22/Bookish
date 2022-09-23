@@ -8,7 +8,7 @@ class CopiesController < ApplicationController
   end
 
   def new
-    @copy = Copy.new
+    @copy = Copy.new(copy_params(false))
   end
 
   def create
@@ -43,8 +43,9 @@ class CopiesController < ApplicationController
 
   private
 
-  def copy_params
-    permitted_params = params.require(:copy).permit(:borrower, :due_date, :book_id)
+  def copy_params(require_all=true)
+    required_params = require_all ? params.require(:copy) : params
+    permitted_params = required_params.permit(:borrower, :due_date, :book_id)
     borrower = permitted_params[:borrower]
     permitted_params[:borrower] = nil if borrower == ""
     permitted_params
